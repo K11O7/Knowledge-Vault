@@ -1,0 +1,102 @@
+# -----------------------------
+
+# Python
+
+# -----------------------------
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
+
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# -----------------------------
+
+# Django
+
+# -----------------------------
+
+*.log
+db.sqlite3
+db.sqlite3-journal
+
+# Django media uploads (optional)
+
+media/
+
+# Django collected static files
+
+staticfiles/
+
+# -----------------------------
+
+# Environment variables
+
+# -----------------------------
+
+.env
+*.env
+
+# -----------------------------
+
+# IDE / Editor
+
+# -----------------------------
+
+.vscode/
+.idea/
+*.iml
+
+# -----------------------------
+
+# OS files
+
+# -----------------------------
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -----------------------------
+
+# Testing / coverage
+
+# -----------------------------
+
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# -----------------------------
+
+# Node (future frontend)
+
+# -----------------------------
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
