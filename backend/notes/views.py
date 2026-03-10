@@ -8,7 +8,14 @@ class NoteViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Note.objects.filter(user=self.request.user)
+        queryset = Note.objects.filter(user=self.request.user)
+
+        tag = self.request.query_params.get("tag")
+
+        if tag:
+            queryset = queryset.filter(tags__name=tag)
+
+        return queryset
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
