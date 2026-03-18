@@ -38,3 +38,18 @@ class NoteSerializer(serializers.ModelSerializer):
             note.tags.add(tag)
 
         return note
+
+    def update(self, instance, validated_data):
+        tag_names = validated_data.pop("tags", None)
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+
+        if tag_names is not None:
+            instance.tags.clear()
+            for name in tag_names:
+                tag, _ = Tag.objects.get_or_create(name=name)
+                instance.tags.add(tag)
+
+        return instance
